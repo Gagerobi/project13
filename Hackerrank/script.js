@@ -1,9 +1,7 @@
-'use strict';
-
-const fs = require('fs');
-
-process.stdin.resume();
-process.stdin.setEncoding('utf-8');
+'use strict';                                       //this was already in the code for the problem
+const fs = require('fs');           
+process.stdin.resume();             
+process.stdin.setEncoding('utf-8'); 
 
 let inputString = '';
 let currentLine = 0;
@@ -51,6 +49,7 @@ function printSinglyLinkedList(node, sep, ws) {
     }
 }
 
+
 // Complete the insertNodeAtHead function below.
 
 /*
@@ -62,19 +61,21 @@ function printSinglyLinkedList(node, sep, ws) {
  * }
  *
  */
-function insertNodeAtHead(head, data) {
-    let newNode = new SinglyLinkedListNode(data);
-    if (!head) {
-        head = newNode;
-        return head;
+function insertNodeAtHead(head, data) {             //this function has head and data as parameters, they are passed in from line 87 in main()
+    let newNode = new SinglyLinkedListNode(data);   //creating a SinglyLinkedListNode class
+    if (!head) {                                    //if head is false
+        head = newNode;                             //assign head to the newNode
+        return head;                                
     } else {
-        newNode.next = head;
-        head = newNode;
+        newNode.next = head;                        //if a head already exists, newNode points to current head
+        head = newNode;                             //head is now assigned to the newNode
     }
     return head;
 }
 
-function main() {
+
+
+function main() {                                                   //this was already in the code for the problem
     const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
 
     const llistCount = parseInt(readLine(), 10);
